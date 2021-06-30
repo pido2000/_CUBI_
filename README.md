@@ -59,15 +59,7 @@ Command (if a conflict rises, you can add --force-overwrite to the following lin
 ```
 	sudo dpkg -i libstdc++-arm-none-eabi-newlib_4.8.3-9+4_all.deb
 ```
-
-Then go to Cubi/firmware/src and run :
-
-```
-bash ./prepare.sh
-```
-
-
-Then, go to the `firmware/` directory and edit the `Makefile` to set the appropriate
+Go to the `firmware/src` directory and edit the `Makefile` to set the appropriate
 `BOARD` variable, targetting your servo.
 
 You can then run:
