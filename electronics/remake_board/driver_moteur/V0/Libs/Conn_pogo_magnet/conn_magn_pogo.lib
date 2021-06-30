@@ -1,0 +1,25 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# Pogo_magn_8pin
+#
+DEF Pogo_magn_8pin POGO 0 40 Y Y 1 F N
+F0 "POGO" 675 75 118 H V C CNN
+F1 "Pogo_magn_8pin" 25 275 118 H V C CNN
+F2 "" 0 0 118 H I C CNN
+F3 "" 0 0 118 H I C CNN
+DRAW
+A 350 75 75 -899 899 0 1 0 N 350 0 350 150
+P 4 0 1 0 350 150 -400 150 -400 0 350 0 N
+X ~ 1 350 -100 100 U 50 50 1 1 B
+X ~ 2 250 -100 100 U 50 50 1 1 B
+X ~ 3 150 -100 100 U 50 50 1 1 B
+X ~ 4 50 -100 100 U 50 50 1 1 B
+X ~ 5 -50 -100 100 U 50 50 1 1 B
+X ~ 6 -150 -100 100 U 50 50 1 1 B
+X ~ 7 -250 -100 100 U 50 50 1 1 B
+X ~ 8 -350 -100 100 U 50 50 1 1 B
+ENDDRAW
+ENDDEF
+#
+#End Library

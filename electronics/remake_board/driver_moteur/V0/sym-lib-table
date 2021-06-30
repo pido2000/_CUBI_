@@ -1,0 +1,6 @@
+(sym_lib_table
+  (lib (name rev7)(type Legacy)(uri ${KIPRJMOD}/Libs/rev7/rev7-eagle-import.lib)(options "")(descr ""))
+  (lib (name conn_pogo_manget)(type Legacy)(uri ${KIPRJMOD}/Libs/Conn_pogo_magnet/conn_magn_pogo.lib)(options "")(descr ""))
+  (lib (name b2b-xh)(type Legacy)(uri ${KIPRJMOD}/Libs/B2B-XH-A_LF__SN_/B2B-XH-A_LF__SN_.lib)(options "")(descr ""))
+  (lib (name driver_moteur-rescue)(type Legacy)(uri ${KIPRJMOD}/driver_moteur-rescue.lib)(options "")(descr ""))
+)

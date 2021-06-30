@@ -1,0 +1,5 @@
+(fp_lib_table
+  (lib (name rev7)(type KiCad)(uri ${KIPRJMOD}/Libs/rev7/rev7.pretty)(options "")(descr ""))
+  (lib (name b2b_xh)(type KiCad)(uri ${KIPRJMOD}/Libs/B2B-XH-A_LF__SN_)(options "")(descr ""))
+  (lib (name conn_pogo_magn)(type KiCad)(uri ${KIPRJMOD}/Libs/Conn_pogo_magnet)(options "")(descr ""))
+)

@@ -1,0 +1,70 @@
+Partlist exported from C:/Users/elkat/Documents/EAGLE/projects/electronics/rev7/rev7.sch at 24/09/2019 17:15
+
+Part   Value               Device                     Package               Description                               FARNELL      MF MPN OC_FARNELL PROD_ID   TP_SIGNAL_NAME VALUE
+BUT    KMR211GLFS          BUTTON-KMR241GLFS          PUSHBUTTON-KMR241GLFS                                                                                                        
+C1     0.1uF               0.1UF-0603-25V-(+80/-20%)  0603                  0.1µF ceramic capacitors                                                 CAP-00810                0.1uF
+C2     22nF                22NF/22,000PF-0603-50V-10% 0603                  0.022uF/22nF/22,000pF ceramic capacitors                                 CAP-07885                22nF 
+C3     22nF                22NF/22,000PF-0603-50V-10% 0603                  0.022uF/22nF/22,000pF ceramic capacitors                                 CAP-07885                22nF 
+C4     22nF                22NF/22,000PF-0603-50V-10% 0603                  0.022uF/22nF/22,000pF ceramic capacitors                                 CAP-07885                22nF 
+C5     22nF                22NF/22,000PF-0603-50V-10% 0603                  0.022uF/22nF/22,000pF ceramic capacitors                                 CAP-07885                22nF 
+C6     0.1uF               0.1UF-0603-25V-(+80/-20%)  0603                  0.1µF ceramic capacitors                                                 CAP-00810                0.1uF
+C7     22nF                22NF/22,000PF-0603-50V-10% 0603                  0.022uF/22nF/22,000pF ceramic capacitors                                 CAP-07885                22nF 
+C8     22nF                22NF/22,000PF-0603-50V-10% 0603                  0.022uF/22nF/22,000pF ceramic capacitors                                 CAP-07885                22nF 
+C9     22nF                22NF/22,000PF-0603-50V-10% 0603                  0.022uF/22nF/22,000pF ceramic capacitors                                 CAP-07885                22nF 
+C10    22nF                22NF/22,000PF-0603-50V-10% 0603                  0.022uF/22nF/22,000pF ceramic capacitors                                 CAP-07885                22nF 
+C11    47pF                0.1UF-0603-25V-(+80/-20%)  0603                  0.1µF ceramic capacitors                                                 CAP-00810                0.1uF
+C12    47pF                0.1UF-0603-25V-(+80/-20%)  0603                  0.1µF ceramic capacitors                                                 CAP-00810                0.1uF
+C13    10uF                0.1UF-0603-25V-(+80/-20%)  0603                  0.1µF ceramic capacitors                                                 CAP-00810                0.1uF
+C14    1uF                 0.1UF-0603-25V-(+80/-20%)  0603                  0.1µF ceramic capacitors                                                 CAP-00810                0.1uF
+C15    1uF                 0.1UF-0603-25V-(+80/-20%)  0603                  0.1µF ceramic capacitors                                                 CAP-00810                0.1uF
+C16    1uF                 0.1UF-0603-25V-(+80/-20%)  0603                  0.1µF ceramic capacitors                                                 CAP-00810                0.1uF
+C17    1uF                 0.1UF-0603-25V-(+80/-20%)  0603                  0.1µF ceramic capacitors                                                 CAP-00810                0.1uF
+C18    10uF                0.1UF-0603-25V-(+80/-20%)  0603                  0.1µF ceramic capacitors                                                 CAP-00810                0.1uF
+C19    18pF                0.1UF-0603-25V-(+80/-20%)  0603                  0.1µF ceramic capacitors                                                 CAP-00810                0.1uF
+C20    18pF                0.1UF-0603-25V-(+80/-20%)  0603                  0.1µF ceramic capacitors                                                 CAP-00810                0.1uF
+C21    100uF               CAP_POL1206                EIA3216               Capacitor Polarized                                                                                    
+CON1   B6B-ZR              B6B-ZR                     B6B-ZR                JST-ZH Connector                                                                                       
+CON2   B6B-ZR              B6B-ZR                     B6B-ZR                JST-ZH Connector                                                                                       
+D1                         LED-FKIT-1206              FKIT-LED-1206         LED (Generic)                                                                                          
+D3     Blue                LED1206                    LED-1206              LEDs                                                                                                   
+D4                         DIODESOD                   SOD-323               Diode                                                                                                  
+D5     PESD1CAN            PESD1CAN                   SOT23                 CAN bus ESD protection diode                                                                           
+IC2    MC78M05ABDT         MC78M05ABDT                DPACK_3               500 mA Positive Voltage Regulators                                                                     
+IC3    MCP1703T-3302E/CB   MCP1700T                   SOT23                                                                                                                        
+IC4    MCP1703T-3302E/CB   MCP1700T                   SOT23                                                                                                                        
+IC5    L293DD              L293DD                     SO20                  PUSH-PULL FOUR CHANNEL DRIVER WITH DIODES                     unknown                                  
+L1     ferrite bead        INDUCTOR0603               0603                  Inductors                                                                                              
+LIPO2S JST-PH_2-PIN_HEADER JST-PH_2-PIN_HEADER        JST_B2B-PH_HEADER     2-pin JST PH Shrouded Header, top entry                                                                
+OSC    8MHz                CRYSTAL5X3                 CRYSTAL-SMD-5X3       Crystals                                                                                               
+Q1     NPN-BJT             TRANSISTOR_NPNSOT23        SOT23                 Transistor NPN                                                                                         
+Q2     NPN-BJT             TRANSISTOR_NPNSOT23        SOT23                 Transistor NPN                                                                                         
+R1     133                 0.27OHM-0603-1/10W-1%      0603                  0.27Ω resistor                                                           RES-08787                0.27 
+R2     60k                 0.27OHM-0603-1/10W-1%      0603                  0.27Ω resistor                                                           RES-08787                0.27 
+R3     30k                 0.27OHM-0603-1/10W-1%      0603                  0.27Ω resistor                                                           RES-08787                0.27 
+R4     100                 0.27OHM-0603-1/10W-1%      0603                  0.27Ω resistor                                                           RES-08787                0.27 
+R6     1k                  0.27OHM-0603-1/10W-1%      0603                  0.27Ω resistor                                                           RES-08787                0.27 
+R7     22                  0.27OHM-0603-1/10W-1%      0603                  0.27Ω resistor                                                           RES-08787                0.27 
+R8     22                  0.27OHM-0603-1/10W-1%      0603                  0.27Ω resistor                                                           RES-08787                0.27 
+R9     10k                 0.27OHM-0603-1/10W-1%      0603                  0.27Ω resistor                                                           RES-08787                0.27 
+R10    1.5k                0.27OHM-0603-1/10W-1%      0603                  0.27Ω resistor                                                           RES-08787                0.27 
+R11    36k                 0.27OHM-0603-1/10W-1%      0603                  0.27Ω resistor                                                           RES-08787                0.27 
+R12    47k                 0.27OHM-0603-1/10W-1%      0603                  0.27Ω resistor                                                           RES-08787                0.27 
+R13    1k                  0.27OHM-0603-1/10W-1%      0603                  0.27Ω resistor                                                           RES-08787                0.27 
+R14    1k                  0.27OHM-0603-1/10W-1%      0603                  0.27Ω resistor                                                           RES-08787                0.27 
+R15    10k                 0.27OHM-0603-1/10W-1%      0603                  0.27Ω resistor                                                           RES-08787                0.27 
+R16    10k                 0.27OHM-0603-1/10W-1%      0603                  0.27Ω resistor                                                           RES-08787                0.27 
+R17    1k                  0.27OHM-0603-1/10W-1%      0603                  0.27Ω resistor                                                           RES-08787                0.27 
+RESET  KMR211GLFS          BUTTON-KMR241GLFS          PUSHBUTTON-KMR241GLFS                                                                                                        
+TP1    PTR1B1,27           PTR1B1,27                  B1,27                 TEST PIN                                                                                               
+TP2    PTR1B1,27           PTR1B1,27                  B1,27                 TEST PIN                                                                                               
+TP3    PTR1B1,27           PTR1B1,27                  B1,27                 TEST PIN                                                                                               
+TP4    PTR1B1,27           PTR1B1,27                  B1,27                 TEST PIN                                                                                               
+TP5    PTR1B1,27           PTR1B1,27                  B1,27                 TEST PIN                                                                                               
+TP8    PTR1B1,27           PTR1B1,27                  B1,27                 TEST PIN                                                                                               
+TP9    PTR1B1,27           PTR1B1,27                  B1,27                 TEST PIN                                                                                               
+TP10   PTR1B1,27           PTR1B1,27                  B1,27                 TEST PIN                                                                                               
+U$1    BUZZER-PASSIF       BUZZER-PASSIF              BUZZER-PASSIF         buzzer-passif                                                                                          
+U$4    HC05                HC05                       HC-05                                                           MODULE HC-05                                                 
+U$6    GY-85               GY-85                      GY-85                                                                                                                        
+UC1    STM32F103CBT6       STM32F103CB                LQFP48                                                                                                                       
+X1     USB-MINIB           USBSMD                     USB-MINIB             USB Connectors                                                                                         
