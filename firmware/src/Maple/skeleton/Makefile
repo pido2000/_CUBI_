@@ -1,6 +1,5 @@
 # Try "make help" first
 
-CROSS_COMPILE="/home/polo/Documents/Cubi/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-"
 .DEFAULT_GOAL := sketch
 
 ## Local configuration

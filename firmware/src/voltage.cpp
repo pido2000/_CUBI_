@@ -37,14 +37,15 @@ void voltage_tick()
 
         // if the voltage goes below VOLTAGE_USB, then we're probably only connected to the USB (or the battery is completely dead)
         if (voltage_is_error) {
-            if (voltage_now < (voltage_limit_l + VOLTAGE_HYST*stepPerVolt)) {
+            if (voltage_now > (voltage_limit_l + VOLTAGE_HYST) || (voltage_now <= voltage_USB)) {
                 voltage_is_error = false;
                 buzzer_stop();
+                
             }
         } else {
-            if (voltage_now > voltage_limit_l + VOLTAGE_HYST*stepPerVolt) {
+            if (voltage_now < voltage_limit_l && (voltage_now > voltage_USB)) {
                 voltage_is_error = true;
-                buzzer_play(MELODY_ALERT, true);
+                //buzzer_play(MELODY_ALERT, true);
             }
         }
     }

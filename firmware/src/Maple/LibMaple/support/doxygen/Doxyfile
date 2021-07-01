@@ -1375,7 +1375,7 @@ INCLUDE_FILE_PATTERNS  =
 
 PREDEFINED             = __attribute__()= \
                        __deprecated= \
-                       __always_inline= \
+                       __attribute__((always_inline))= \
                        __packed = \
                        __weak = \
                        __cplusplus \

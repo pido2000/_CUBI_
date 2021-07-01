@@ -25,7 +25,7 @@ int nbDc = 0;
 int prevNbDc = 0;
 
 // PID parameters found with the Ziegler-Nichols method
-TERMINAL_PARAMETER_INT(kp, "PID P", 10);
+TERMINAL_PARAMETER_INT(kp, "PID P", 20);
 TERMINAL_PARAMETER_INT(ki, "PID I", 3); // Found 5, went lower because extreme changes in command would still create instabilities
 TERMINAL_PARAMETER_INT(kd, "PID D", 2);
 TERMINAL_PARAMETER_INT(enableodo, "enables/disables the odometry calculations", 1);
@@ -106,9 +106,9 @@ TERMINAL_COMMAND(dct, "DC test")
         motors[0].command = command1;
         motors[1].command = command2;
 
-        terminal_io()->print("Sending to motor 1 : ");        
+        terminal_io()->print("Sending to motor 1 : ");
         terminal_io()->println(motors[0].command);
-        terminal_io()->print("Sending to motor 2 : ");        
+        terminal_io()->print("Sending to motor 2 : ");
         terminal_io()->println(motors[1].command);
         
         dc_command();
@@ -490,8 +490,6 @@ void dc_tick()
         dc_command();
     }
 }
-
-long conteur = 0;
 
 void test_odo_tick(long a){
     motors[0].speed_target = a;

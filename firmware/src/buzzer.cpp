@@ -472,6 +472,15 @@ static struct buzzer_note melody_boot[] = {
     {0, 0}
 };
 
+// static struct buzzer_note melody_boot_old[] = {
+//     {523, 200/2},
+//     {659, 350/2},
+//     {523, 200/2},
+//     {698, 300/2},
+//     {659, 160/2},
+//     {0, 0}
+// };
+
 static struct buzzer_note melody_alert[] = {
     {2000, 200},
     {200, 200},

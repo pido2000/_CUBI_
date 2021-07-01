@@ -2,11 +2,10 @@
 #
 MODEL="Cubi"
 VERSION="1.0"
-V=1
+
 .DEFAULT_GOAL := sketch
 
 ## Local configuration
-CROSS_COMPILE="/home/polo/Documents/Cubi/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-"
 LIB_MAPLE_HOME = ./Maple/LibMaple
 LIB_RHOBAN_HOME = ./Maple/LibRhoban
 ENABLE_COMMANDS := yes
@@ -45,7 +44,6 @@ BOARD ?= maple_mini
 MEMORY_TARGET ?= flash
 
 BOOTLOADER ?= maple
-#BOOTLOADER ?= robotis
 BOOTLOADER_PORT ?= /dev/ttyACM0
 
 # $(BOARD)- and $(MEMORY_TARGET)-specific configuration
@@ -69,7 +67,7 @@ include $(MAKEDIR)/build-templates.mk
 # It slows compilation noticeably; remove after 1 release.
 TARGET_FLAGS    += -I$(LIBMAPLE_PATH)/include/libmaple \
                    -I$(WIRISH_PATH)/include/wirish \
-		   -I$(LIB_RHOBAN_HOME)
+		   -I$(LIB_RHOBAN_HOME) -Wno-narrowing
 TARGET_FLAGS += -I$(LIBRARIES_PATH) # for internal lib. includes, e.g. <Wire/WireBase.h>
 GLOBAL_CFLAGS   := -Os -gdwarf-2 -nostdlib \
                    -ffunction-sections -fdata-sections \

@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 # This script sends a program on a robotis board (OpenCM9.04 or CM900)
-# using the rbotis bootloader (used in OpenCM IDE)
+# using the robotis bootloader (used in OpenCM IDE)
 # 
 # Usage:
 # python robotis-loader.py <serial port> <binary>
@@ -24,18 +24,18 @@ pgm, port, binary = sys.argv
 # Helper to prints a progress bar
 def progressBar(percent, precision=65):
     threshold=precision*percent/100.0
-    sys.stdout.write(b'[ ')
+    sys.stdout.write('[ ')
     for x in xrange(0, precision):
-        if x < threshold: sys.stdout.write(b'#')
-        else: sys.stdout.write(b' ')
-    sys.stdout.write(b' ] ')
+        if x < threshold: sys.stdout.write('#')
+        else: sys.stdout.write(' ')
+    sys.stdout.write(' ] ')
     sys.stdout.flush()
 
 # Opening the firmware file
 try:
     stat = os.stat(binary)
     size = stat.st_size
-    firmware = open(binary, 'rb')
+    firmware = file(binary, 'rb')
     print('* Opening %s, size=%d' % (binary, size))
 except:
     exit('! Unable to open file %s' % binary)
@@ -51,19 +51,19 @@ s.setRTS(True)
 s.setDTR(False)
 time.sleep(0.1)
 s.setRTS(False)
-s.write(b'CM9X')
+s.write('CM9X')
 s.close()
 time.sleep(1.0);
 
 print('* Connecting...')
 s = serial.Serial(port, baudrate=115200)
-s.write(b'AT&LD')
+s.write('AT&LD')
 print('* Download signal transmitted, waiting...')
 
 # Entering bootloader sequence
 while True:
     line = s.readline().strip()
-    if line.endswith(b'Ready..'):
+    if line.endswith('Ready..'):
         print('* Board ready, sending data')
         cs = 0
         pos = 0
@@ -84,11 +84,11 @@ while True:
         s.write(chr(cs))
         print('* Firmware was sent')
     else:
-        if line == (b'Success..'):
+        if line == 'Success..':
             print('* Success, running the code')
             print('')
-            s.write(b'AT&RST')
+            s.write('AT&RST')
             s.close()
             exit()
         else:
-        print(b'Board -> '+line)
+            print('Board -> '+line)

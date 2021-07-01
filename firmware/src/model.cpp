@@ -231,7 +231,6 @@ void model_tick() {
         motors[0].speed_target = right;
         motors[1].speed_target = left;
     }
-
 }
 
 // Inputs in mm/s and deg/s, outputs in imp/SPEED_DT (firmware units)

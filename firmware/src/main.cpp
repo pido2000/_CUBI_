@@ -15,16 +15,19 @@
 #define NOSOUND 0
 #define BAUDRATE 115200
 
-// light weight :
+// Without weights :
 // #define CART_KP 1000
 // #define CART_KI 10000
 // #define CART_KD 40
 
-// regular cubi
-#define CART_KP 2000
-#define CART_KI 25000
-#define CART_KD 60
+// With weights
+// #define CART_KP 2000
+// #define CART_KI 25000
+// #define CART_KD 60
 
+#define CART_KP 4000
+#define CART_KI 50000
+#define CART_KD 100
 
 
 
@@ -143,7 +146,7 @@ TERMINAL_COMMAND(usb, "Go to USB serial mode")
 }
 
 TERMINAL_PARAMETER_BOOL(cartpole, "activates the cartpole mode", false);
-TERMINAL_PARAMETER_FLOAT(cartgoal, "Angle goal for the inverted pendulum", 1.84);//1.84
+TERMINAL_PARAMETER_FLOAT(cartgoal, "Angle goal for the inverted pendulum", 1.607);
 TERMINAL_PARAMETER_FLOAT(criticangle, "Max angle we're allowed to aim around the vertical point to control the robot in rad", 0.005);
 
 TERMINAL_COMMAND(cart, "goal(rads) [kp] [ki] [kd] [rotation]")
@@ -382,4 +385,4 @@ int my_atoi(char *p, bool *success)
     }
     *success = true;
     return k * sign;
-} 
+}

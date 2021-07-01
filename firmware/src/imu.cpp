@@ -59,33 +59,33 @@ TERMINAL_PARAMETER_FLOAT(gyro_z_offset, "gyro_z_offset", -1.02);
 TERMINAL_PARAMETER_BOOL(imudbg, "Debug the IMU", false);
 
 // Addresses
-// #define MAGN_ADDR       0x1e            // wrong address 
+#define MAGN_ADDR       0x1e
 #define GYRO_ADDR       0x68
 #define ACC_ADDR        0x53
 
 // Config
-// float MAGN_X_MIN=-0.5;
-// float MAGN_X_MAX=0.5;
-// float MAGN_Y_MIN=-0.5;
-// float MAGN_Y_MAX=0.5;
-// float MAGN_Z_MIN=-0.5;
-// float MAGN_Z_MAX=0.5;
+float MAGN_X_MIN=-0.5;
+float MAGN_X_MAX=0.5;
+float MAGN_Y_MIN=-0.5;
+float MAGN_Y_MAX=0.5;
+float MAGN_Z_MIN=-0.5;
+float MAGN_Z_MAX=0.5;
 
-// /*
-// #define MAGN_X_MIN      -180
-// #define MAGN_X_MAX      0
-// #define MAGN_Y_MIN      -0.5
-// #define MAGN_Y_MAX      0.5
-// #define MAGN_Z_MIN      -320
-// #define MAGN_Z_MAX      -105
-// */
+/*
+#define MAGN_X_MIN      -180
+#define MAGN_X_MAX      0
+#define MAGN_Y_MIN      -0.5
+#define MAGN_Y_MAX      0.5
+#define MAGN_Z_MIN      -320
+#define MAGN_Z_MAX      -105
+*/
 
-// #define MAGN_X_CENTER   ((MAGN_X_MIN+MAGN_X_MAX)/2.0)
-// #define MAGN_X_AMP      (MAGN_X_MAX-MAGN_X_MIN)
-// #define MAGN_Y_CENTER   ((MAGN_Y_MIN+MAGN_Y_MAX)/2.0)
-// #define MAGN_Y_AMP      (MAGN_Y_MAX-MAGN_Y_MIN)
-// #define MAGN_Z_CENTER   ((MAGN_Z_MIN+MAGN_Z_MAX)/2.0)
-// #define MAGN_Z_AMP      (MAGN_Z_MAX-MAGN_Z_MIN)
+#define MAGN_X_CENTER   ((MAGN_X_MIN+MAGN_X_MAX)/2.0)
+#define MAGN_X_AMP      (MAGN_X_MAX-MAGN_X_MIN)
+#define MAGN_Y_CENTER   ((MAGN_Y_MIN+MAGN_Y_MAX)/2.0)
+#define MAGN_Y_AMP      (MAGN_Y_MAX-MAGN_Y_MIN)
+#define MAGN_Z_CENTER   ((MAGN_Z_MIN+MAGN_Z_MAX)/2.0)
+#define MAGN_Z_AMP      (MAGN_Z_MAX-MAGN_Z_MIN)
 
 #define GYRO_GAIN 0.06957
 #define ACC_G     256
@@ -369,6 +369,7 @@ void imu_check() {
     i2c_disable(I2C1);
     delay(10);
     imu_init();
+    // terminal_io()->println("caution imu error");
   }
 }
 
@@ -411,14 +412,14 @@ void imu_tick()
         imu_smooth_pitch(imupitchcoef, dt/1000000.0);
 
         if (imudbg) {
-            // terminal_io()->print(millis());
-            // terminal_io()->print(" ");
-            // terminal_io()->print(magn_x);
-            // terminal_io()->print(" ");
-            // terminal_io()->print(magn_y);
-            // terminal_io()->print(" ");
-            // terminal_io()->print(magn_z);
-            // terminal_io()->print(" ");
+            terminal_io()->print(millis());
+            terminal_io()->print(" ");
+            terminal_io()->print(magn_x);
+            terminal_io()->print(" ");
+            terminal_io()->print(magn_y);
+            terminal_io()->print(" ");
+            terminal_io()->print(magn_z);
+            terminal_io()->print(" ");
 
             terminal_io()->print(gyro_x);
             terminal_io()->print(" ");
@@ -449,8 +450,8 @@ void imu_tick()
             terminal_io()->print(" ");            
             terminal_io()->print(dt);
             terminal_io()->print(" ");
-            // terminal_io()->print(magn_z);
-            // terminal_io()->print(" ");
+            terminal_io()->print(magn_z);
+            terminal_io()->print(" ");
             terminal_io()->print(gyro_z);
             terminal_io()->print(" ");
             terminal_io()->print(acc_y); 
@@ -464,37 +465,37 @@ void imu_tick()
     }
 }
 
-// TERMINAL_COMMAND(calib, "Calibrates the IMU")
-// {
-//     calibrating_t = -1;
-//     if (!calibrating && argc) {
-//         imu_calib_start();
-//         terminal_io()->println("Started calibration");
-//     } else if (calibrating && !argc) {
-//         imu_calib_stop();
+TERMINAL_COMMAND(calib, "Calibrates the IMU")
+{
+    calibrating_t = -1;
+    if (!calibrating && argc) {
+        imu_calib_start();
+        terminal_io()->println("Started calibration");
+    } else if (calibrating && !argc) {
+        imu_calib_stop();
 
-//         terminal_io()->println("Calibration over");
-//         terminal_io()->println("X: ");
-//         terminal_io()->print(MAGN_X_MIN);
-//         terminal_io()->print(" -> ");
-//         terminal_io()->print(MAGN_X_MAX);
-//         terminal_io()->println();
+        terminal_io()->println("Calibration over");
+        terminal_io()->println("X: ");
+        terminal_io()->print(MAGN_X_MIN);
+        terminal_io()->print(" -> ");
+        terminal_io()->print(MAGN_X_MAX);
+        terminal_io()->println();
 
-//         terminal_io()->println("Y: ");
-//         terminal_io()->print(MAGN_Y_MIN);
-//         terminal_io()->print(" -> ");
-//         terminal_io()->print(MAGN_Y_MAX);
-//         terminal_io()->println();
+        terminal_io()->println("Y: ");
+        terminal_io()->print(MAGN_Y_MIN);
+        terminal_io()->print(" -> ");
+        terminal_io()->print(MAGN_Y_MAX);
+        terminal_io()->println();
 
-//         terminal_io()->println("Z: ");
-//         terminal_io()->print(MAGN_Z_MIN);
-//         terminal_io()->print(" -> ");
-//         terminal_io()->print(MAGN_Z_MAX);
-//         terminal_io()->println();
-//     } else {
-//         terminal_io()->println("Usage: calib start, then calib");
-//     }
-// }
+        terminal_io()->println("Z: ");
+        terminal_io()->print(MAGN_Z_MIN);
+        terminal_io()->print(" -> ");
+        terminal_io()->print(MAGN_Z_MAX);
+        terminal_io()->println();
+    } else {
+        terminal_io()->println("Usage: calib start, then calib");
+    }
+}
 
 void imu_calib_start()
 {
@@ -510,6 +511,7 @@ void imu_calib_stop()
 void imu_calib_rotate()
 {
     imu_calib_start();
+    //motion_set_turn_speed(60);
     calibrating_t = 0.1;
 }
 
@@ -548,13 +550,13 @@ TERMINAL_COMMAND(imu_debug, "imu data")
             imu_tick();
             imu_yaw();
             
-            // terminal_io()->print("MAGN X ");
-            // terminal_io()->print(magn_x);
-            // terminal_io()->print("MAGN Y ");
-            // terminal_io()->print(magn_y);
-            // terminal_io()->print("MAGN Z ");
-            // terminal_io()->print(magn_z);
-            // terminal_io()->print("GYRO X ");
+            terminal_io()->print("MAGN X ");
+            terminal_io()->print(magn_x);
+            terminal_io()->print("MAGN Y ");
+            terminal_io()->print(magn_y);
+            terminal_io()->print("MAGN Z ");
+            terminal_io()->print(magn_z);
+            terminal_io()->print("GYRO X ");
 
             terminal_io()->print(gyro_x);
             terminal_io()->print("GYRO Y ");

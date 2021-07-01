@@ -82,3 +82,32 @@ TERMINAL_COMMAND(btconf, "Bluetooth config")
         }
     }
 }
+
+TERMINAL_COMMAND(bt, "Configuration manuelle du BT") {
+	if (argc != 2) {
+		terminal_io()->println("Utilisation : bt <cmd> <baud_rate>");
+	} else {
+        terminal_io()->print("Baud Rate : ");
+        terminal_io()->println(atoi(argv[1]));
+        terminal_io()->print("Commande envoyee : ");
+        terminal_io()->println(argv[0]);
+        
+		digitalWrite(BTCONF_PIN, HIGH);
+        for(int i=0 ; i<5 ; i++) {
+            Serial1.begin(atoi(argv[1]));
+            
+            Serial1.write(argv[0]);
+            Serial1.write("\r\n");
+            delay(10);
+            if (Serial1.available()) {
+                terminal_io()->println("Reading :");
+                while(Serial1.available()) {
+                    terminal_io()->print((char)Serial1.read());
+                }
+                terminal_io()->println("\n");
+            } else {
+                terminal_io()->println("Nothing to read\n");
+            }
+        }
+	}
+}
