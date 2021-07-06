@@ -1,6 +1,9 @@
 ### Description
+
+![Cubi top](/Docs/Pictures/20210706_094955.jpg)
+
 Simple open source bluetooth controlled wheeled robot. Mechanical design, electronics and software designs available on this repo.
-I used @Gregwar's Holo as a starting point.
+Remy F. used @Gregwar's Holo as a starting point.
 
 The initial design is a cube like robot :
 
@@ -74,7 +77,19 @@ Use an USB cable to connect your pc with the robot's board
 make install
 ```
 ### Bluetooth
-You can control the robot without the need of a cable. The most straight-forward way is to download the "Metabot" app from Google Play. Once on the app you can scan for devices, find your robot and pair it with your phone.
+
+First you need to set the name and the pasword using a cable.
+
+```
+cu -l /dev/ttyACM0
+btconf <name> <pswrd>
+```
+
+
+Then, you can control the robot without the need of a cable. The most straight-forward way is to download the "Metabot" app from Google Play. Once on the app you can scan for devices, find your robot and pair it with your phone.
+
+
+
 
 If you want to pair your PC with your robot, one method is as follows (Ubuntu).
 
@@ -108,4 +123,29 @@ You might have permission access issues. Make sure you're in the dialout group o
 ```
     sudo chmod 777 /dev/rfcomm0 && cu -l /dev/rfcomm0
 ```
+
+### Electronics
+
+A board was made with all integrated components in order to drop fabrication cost. 
+
+Top
+
+![Cubi top](/Docs/Pictures/top.jpg)
+
+Bottom
+
+![Cubi bottom](/Docs/Pictures/bottom.jpg)
+
+### Mecanics
+
+Cubi's design is simple. It consist of a squared box. The majority was made in MDF.
+
+Visual from Onshape
+![Cubi box](/Docs/Pictures/box.jpg)
+
+The design is transposed in the following svg file.
+![Cubi svg](/Docs/Pictures/cubi.jpg)
+
+We also enjoyed the look of PMMA.
+![Cubi svg](/Docs/Pictures/20210706_095217.jpg)
 
