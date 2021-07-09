@@ -11,7 +11,7 @@ Old schematics and pcbs using Maple Mini boards, mostly developed on Eagle EDA.
 
 ### remake_board
 
-Recent tests made on CUBI electronic boards.
+Recent tests made on CUBI electronic boards, developed on KiCad EDA.
 
 The goal was to separate the motor driver and the 9V to 5V voltage regulator (the supply part) from the rest of components.
 We wanted to add magnetic connectors (Pogo conn) to have a Plug And Play device.
