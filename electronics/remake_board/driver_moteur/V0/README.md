@@ -19,7 +19,7 @@ En effet, on peut difficilement créer une carte globale qui respecte les condit
 
 ### Notes à part
 
-Nous n'avons créé qu'une seule version qui n'a pas encore testée.
+Nous n'avons créé qu'une seule version qui n'a pas encore été testée.
 De plus, certaines soudures sont difficilement réalisables si l'on veut fabriquer le module soi-même.
 
 Comme l'on possède 2 connecteurs Pogo de 8 broches, on a rajouté 4 pins disponibles pour commander des Leds supplémentaires.
